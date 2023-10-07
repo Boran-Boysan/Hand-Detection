@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import time
-net = cv2.dnn.readNet('training_last.weights', 'testing.cfg') # Belirtilen dosya adına göre yapılandırmayı ve çerçeveyi otomatik olarak algılamasını saglar
+net = cv2.dnn.readNet('training_last.weights', 'testing.cfg') # Allows configuration and automatic detection of the frame based on the specified file name
 
 classes = []
 with open("classes.txt", "r") as f:
@@ -15,7 +15,7 @@ net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
 font = cv2.FONT_HERSHEY_PLAIN
-colors = np.random.uniform(0, 255, size=(100, 3)) #  verilen aralık içindeki herhangi bir değerin tek tip tarafından çizilmesi eşit derecede olasıdır.
+colors = np.random.uniform(0, 255, size=(100, 3)) #  Any value within the given range is equally likely to be drawn by the uniform type.
 
 prev_frame_time = 0
 new_frame_time = 0
